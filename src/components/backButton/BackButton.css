@@ -1,0 +1,23 @@
+.backBtn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: var(--main-color);
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.75rem 0.9rem;
+  border-radius: 0.1rem;
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+}
+.backBtn:hover {
+  background-color: white;
+}
+
+.backBtn img {
+  width: 1.5rem;
+  height: auto;
+  margin-right: 0.5rem;
+}

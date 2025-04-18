@@ -11,17 +11,12 @@ import { db } from "../../firebaseConfig";
 
 const articlesCollection = collection(db, "articles");
 
-const handleError = (error, operation) => {
-  const message = error.message || `Xatolik yuz berdi: ${operation}`;
-  throw new Error(message);
-};
-
 export const addArticle = async (article) => {
   try {
     const docRef = await addDoc(articlesCollection, article);
     return docRef.id;
   } catch (error) {
-    handleError(error, "Maqola qo'shish");
+    return error;
   }
 };
 
@@ -30,7 +25,7 @@ export const getArticles = async () => {
     const querySnapshot = await getDocs(articlesCollection);
     return querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
   } catch (error) {
-    handleError(error, "Maqolalarni olish");
+    return error;
   }
 };
 
@@ -42,9 +37,8 @@ export const getArticleById = async (articleId) => {
     if (articleSnap.exists()) {
       return { id: articleSnap.id, ...articleSnap.data() };
     }
-    throw new Error("Maqola topilmadi");
   } catch (error) {
-    handleError(error, "Maqola olish");
+    return error;
   }
 };
 
@@ -53,7 +47,7 @@ export const updateArticle = async (id, updatedData) => {
     const articleRef = doc(db, "articles", id);
     await updateDoc(articleRef, updatedData);
   } catch (error) {
-    handleError(error, "Maqola yangilash");
+    return error;
   }
 };
 
@@ -62,6 +56,6 @@ export const deleteArticle = async (id) => {
     const articleRef = doc(db, "articles", id);
     await deleteDoc(articleRef);
   } catch (error) {
-    handleError(error, "Maqola o'chirish");
+    return error;
   }
 };
