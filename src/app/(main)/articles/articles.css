@@ -1,0 +1,107 @@
+.articles {
+  padding: 0 8rem 3rem 9rem;
+}
+
+.articleCards {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  width: 100%;
+  position: relative;
+  min-height: 20rem;
+}
+
+.articleCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  margin-right: 1rem;
+  background-color: white;
+  padding-bottom: 1.4rem;
+  margin-bottom: 1rem;
+  border-radius: 0.1rem;
+  overflow: hidden;
+}
+
+.articleBody span {
+  color: var(--main-color);
+}
+
+.articleCard img {
+  width: 100%;
+  height: 16.5rem;
+  object-fit: cover;
+}
+
+.articleCard h3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 1.3rem 1.3rem 0 1.3rem;
+  overflow: hidden;
+  color: black;
+  height: 4.1rem;
+  margin-bottom: 0.6rem;
+}
+
+.articleBody {
+  padding: 0 1.3rem;
+}
+
+.articleBody h4 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  font-weight: 500;
+  overflow: hidden;
+  font-size: 1.05rem;
+  height: 2.6rem;
+  color: black;
+  margin-bottom: 0.9rem;
+}
+
+.articleFooter {
+  padding: 0 1.3rem;
+  text-align: right;
+}
+
+.articleDownload-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.downloadPDF,
+.zenodo {
+  border-radius: 0.1rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background-color: var(--main-color);
+  padding: 0.55rem 0.7rem;
+  transition: all 0.3s;
+  border: 2px solid var(--main-color);
+  color: white;
+}
+.downloadPDF:hover {
+  background-color: white;
+  color: var(--main-color);
+}
+
+.zenodo {
+  background-color: #ff3700;
+  border: 2px solid #ff3700;
+}
+.zenodo:hover {
+  background-color: white;
+  color: #ff3700;
+}
+
+.articleFooter h5 {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.6);
+}
